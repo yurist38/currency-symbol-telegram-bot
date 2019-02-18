@@ -1,0 +1,32 @@
+{
+  "name": "currency-symbol-telegram-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot providing a currency symbol for the passed currency code",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:ts": "tslint -c tslint.json *.ts",
+    "lint": "npm run lint:ts",
+    "start": "ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yurist38/currency-symbol-telegram-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yurist38/currency-symbol-telegram-bot/issues"
+  },
+  "homepage": "https://github.com/yurist38/currency-symbol-telegram-bot#readme",
+  "dependencies": {
+    "@types/node-telegram-bot-api": "^0.30.4",
+    "currency-symbol-map": "^4.0.4",
+    "node-telegram-bot-api": "^0.30.0",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3"
+  },
+  "devDependencies": {
+    "tslint": "^5.12.1"
+  }
+}
