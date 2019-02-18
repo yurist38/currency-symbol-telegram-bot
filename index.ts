@@ -15,7 +15,7 @@ const startMessage = 'Hi! I can give you a currency symbol for a currency code y
 bot.on('message', (msg) => {
   const {text, chat: { id }} = msg;
 
-  if (!text || text === '\start') {
+  if (!text || text.match(/\/start/)) {
     bot.sendMessage(id, startMessage);
     return;
   }
