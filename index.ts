@@ -10,17 +10,13 @@ if (!TELEGRAM_BOT_TOKEN) {
 }
 
 const bot = new TelegramBot(TELEGRAM_BOT_TOKEN, {polling: true});
-
-bot.onText(/\/start/, (msg) => {
-  console.log(msg); // tslint:disable-line
-  const startMessage = 'Hi! I can give you a currency symbol for a currency code you send to me!';
-  bot.sendMessage(msg.chat.id, startMessage);
-});
+const startMessage = 'Hi! I can give you a currency symbol for a currency code you send to me!';
 
 bot.on('message', (msg) => {
   const {text, chat: { id }} = msg;
-  if (!text) {
-    bot.sendMessage(id, 'Seems like you did not send me anything...');
+
+  if (!text || text === '\start') {
+    bot.sendMessage(id, startMessage);
     return;
   }
 
